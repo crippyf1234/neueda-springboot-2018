@@ -36,7 +36,7 @@ public class ToyStory {
 		return "Ham was played by John Ratzenberger";
 	}	
 	
-	@GetMapping("mrPotatoHead")
+	@GetMapping("/mrPotatoHead")
 	public String mrPotatoHead(Model model) {
 		return "Mr Potato Head was played by Don Rickles";
 	}	
@@ -47,3 +47,6 @@ public class ToyStory {
 	}	
 	
 }
+
+
+

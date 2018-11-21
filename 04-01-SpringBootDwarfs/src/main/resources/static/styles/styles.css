@@ -1,0 +1,16 @@
+body {
+	height: 100%;
+}
+
+.jumnbotron {
+	margin:0px;
+}
+.navbar-nav { display: flex; justify-content: center }
+
+img {
+	width: 300px;
+	height: auto;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
