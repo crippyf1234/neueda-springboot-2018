@@ -1,0 +1,16 @@
+img {
+	width: 200px;
+	height: 300px;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.footer {
+height: 50px;
+position: relative;
+width: 100%;
+bottom: 0;
+list-style-type: none;
+padding-bottom:5.5em;
+}

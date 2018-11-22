@@ -2,23 +2,25 @@ package uk.ac.belfastmet.shrektoystory.controller;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import uk.ac.belfastmet.dwarf.domain.Dwarf;
-import uk.ac.belfastmet.dwarf.service.DwarfService;
-
+import uk.ac.belfastmet.shrektoystory.domain.Movie;
+import uk.ac.belfastmet.shrektoystory.service.MovieService;
+@Controller
+@RequestMapping("/toystory")
 public class ToyStoryController {
 	@GetMapping("")
 	public String disney(Model model) {
 		
-		DwarfService dwarfService = new DwarfService();
-		ArrayList<Dwarf> disneyDwarfs = dwarfService.getDisneyDwarfs();
+		MovieService movieService = new MovieService();
+		ArrayList<Movie> toyStoryCharacters = movieService.getToyStoryCharacters();
 		
-		model.addAttribute("pageTitle","Disney!");
-		model.addAttribute("disneyDwarfs", disneyDwarfs);
+		model.addAttribute("toyStoryCharacters", toyStoryCharacters);
 	
-		return "disney.html";
+		return "toystory.html";
 	}
 	
 }

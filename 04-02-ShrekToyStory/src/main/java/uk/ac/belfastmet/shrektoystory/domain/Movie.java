@@ -3,7 +3,7 @@ package uk.ac.belfastmet.shrektoystory.domain;
 public class Movie {
 
 	private String name;
-	private String author;
+	private String movie;
 	private String image;
 	
 	public Movie() {                                                   /* This default constructor is essential for SpringBoot */
@@ -30,7 +30,7 @@ public class Movie {
 	}
 
 	public void setMovie(String movie) {
-		this.author = movie;
+		this.movie = movie;
 	}
 
 	public String getImage() {
