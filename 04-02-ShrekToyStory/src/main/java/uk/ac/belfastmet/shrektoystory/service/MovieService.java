@@ -2,7 +2,7 @@ package uk.ac.belfastmet.shrektoystory.service;
 
 import java.util.ArrayList;
 
-import uk.ac.belfastmet.dwarf.domain.Dwarf;
+
 import uk.ac.belfastmet.shrektoystory.domain.Movie;
 
 public class MovieService {
