@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Creepster|Old+Standard+TT" rel="stylesheet" /> 
+  <title th:text=${pageTitle}>Dwarfs</title>
+</head>
+
+<body>
+
+<div class="container">
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+</div> 
+
+<div class="container">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" style="text-align:center;">Dwarfs Search</h1>
+  </div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<section class="col-lg-6 col-md-6 col-sm-12">
+<form>
+<div class="form-group">
+
+<label for="exampleFormControlSelect1">What Dwarf Would You Like To Search For</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>By ID</option>
+      <option>Author</option>
+      <option>Name</option>
+    </select>
+
+</div>
+<div class="form-group">
+
+<label for="exampleFormControlSelect1">What Dwarf Would You Like To Search For</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>By ID</option>
+      <option>Author</option>
+      <option>Name</option>
+    </select>
+
+</div>
+
+<div class="form-group">
+    <div class="col-sm-offset-12 col-sm-12">
+      <button id="pi" type="button" class="btn btn-default" onclick="function(); return false;">Submit</button>
+    </div>
+</div>
+</form>
+</section>
+<section class="col-lg-6 col-md-6 col-sm-12">
+
+</section>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+</body>
+</html>

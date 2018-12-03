@@ -1,14 +1,14 @@
 package uk.ac.belfastmet.dwarfs.controllers;
 
-import java.util.ArrayList;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import uk.ac.belfastmet.dwarfs.domain.Dwarfs;
-import uk.ac.belfastmet.dwarfs.service.DwarfsService;
+import uk.ac.belfastmet.dwarfs.repository.DwarfRepository;
+
 
 
 @Controller
@@ -16,14 +16,23 @@ import uk.ac.belfastmet.dwarfs.service.DwarfsService;
 
 public class DisneyController{
 	
+	DwarfRepository dwarfRepository;
+	
+	public DisneyController(DwarfRepository dwarfRepository) {
+		super();
+		this.dwarfRepository = dwarfRepository;
+	}
+
+
+
 	@GetMapping("")
 	public String disney(Model model) {
 		
-		DwarfsService dwarfsService = new DwarfsService();
-		ArrayList<Dwarfs> disneyDwarfs = dwarfsService.getDisneyDwarfs();
-		
-		model.addAttribute("disneyDwarfs", disneyDwarfs);
+	//	DwarfsService dwarfsService = new DwarfsService();
+	//	ArrayList<Dwarfs> disneyDwarfs = dwarfsService.getDisneyDwarfs();
+		model.addAttribute("pageTitle", "Disney");
+		model.addAttribute("disneyDwarfs", this.dwarfRepository.findByAuthor("Disney"));
 	
-		return "disney.html";
+		return "dwarf.html";
 	}
 }

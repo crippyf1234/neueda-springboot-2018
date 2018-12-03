@@ -2,7 +2,7 @@ package uk.ac.belfastmet.dwarfs.service;
 
 import java.util.ArrayList;
 
-import uk.ac.belfastmet.dwarfs.domain.Dwarfs;
+import uk.ac.belfastmet.dwarfs.domain.Dwarf;
 
 public class DwarfsService {
 	
@@ -10,41 +10,41 @@ public class DwarfsService {
 		super();
 	}
 	
-	public ArrayList<Dwarfs> getDisneyDwarfs(){
+	public ArrayList<Dwarf> getDisneyDwarfs(){
 	
-        ArrayList<Dwarfs> dwarfs = new ArrayList<Dwarfs>();
+        ArrayList<Dwarf> dwarfs = new ArrayList<Dwarf>();
 		
-        Dwarfs sleepy = new Dwarfs();
+        Dwarf sleepy = new Dwarf();
 		sleepy.setName("Sleepy");
 		sleepy.setAuthor("Disney");
 		sleepy.setImage("Sleepy.png");
 		
-		Dwarfs happy = new Dwarfs();
+		Dwarf happy = new Dwarf();
 		happy.setName("Happy");
 		happy.setAuthor("Disney");
 		happy.setImage("Happy.png");
 		
-		Dwarfs dopey = new Dwarfs();
+		Dwarf dopey = new Dwarf();
 		dopey.setName("Dopey");
 		dopey.setAuthor("Disney");
 		dopey.setImage("Dopey.png");
 		
-		Dwarfs grumpy = new Dwarfs();
+		Dwarf grumpy = new Dwarf();
 		grumpy.setName("Grumpy");
 		grumpy.setAuthor("Disney");
 		grumpy.setImage("Grumpy.png");
 		
-		Dwarfs bashful = new Dwarfs();
+		Dwarf bashful = new Dwarf();
 		bashful.setName("Bashful");
 		bashful.setAuthor("Disney");
 		bashful.setImage("Bashful.png");
 		
-		Dwarfs sneezy = new Dwarfs();
+		Dwarf sneezy = new Dwarf();
 		sneezy.setName("Sneezy");
 		sneezy.setAuthor("Disney");
 		sneezy.setImage("Sneezy.png");
 		
-		Dwarfs doc = new Dwarfs();
+		Dwarf doc = new Dwarf();
 		doc.setName("Doc");
 		doc.setAuthor("Disney");
 		doc.setImage("Doc.png");
@@ -61,23 +61,23 @@ public class DwarfsService {
 		return dwarfs;
 	}
 	
-	public ArrayList<Dwarfs> getTolkienDwarfs(){
+	public ArrayList<Dwarf> getTolkienDwarfs(){
 		
-        ArrayList<Dwarfs> dwarfs = new ArrayList<Dwarfs>();
+        ArrayList<Dwarf> dwarfs = new ArrayList<Dwarf>();
 		
-        Dwarfs thorin = new Dwarfs("Thorin","Tolkien", "Thorin.png");
-		Dwarfs balin = new Dwarfs("Balin","Tolkien", "Balin.png");
-		Dwarfs dwalin = new Dwarfs("Dwalin","Tolkien", "Dwalin.png");
-		Dwarfs fili = new Dwarfs("Fili","Tolkien", "Fili.png");
-		Dwarfs kili = new Dwarfs("Kili","Tolkien", "Kili.png");
-		Dwarfs dori = new Dwarfs("Dori","Tolkien", "Dori.png");
-		Dwarfs nori = new Dwarfs("Nori","Tolkien", "Nori.png");
-		Dwarfs ori = new Dwarfs("Ori","Tolkien", "Ori.png");
-		Dwarfs oin = new Dwarfs("Oin","Tolkien", "Oin.png");
-		Dwarfs gloin = new Dwarfs("Gloin","Tolkien", "Gloin.png");
-		Dwarfs bifur = new Dwarfs("Bifur","Tolkien", "Bifur.png");
-		Dwarfs bofur = new Dwarfs("Bofur","Tolkien", "Bofur.png");
-		Dwarfs bombur = new Dwarfs("Bombur","Tolkien", "Bombur.png");
+        Dwarf thorin = new Dwarf("Thorin","Tolkien", "Thorin.png");
+		Dwarf balin = new Dwarf("Balin","Tolkien", "Balin.png");
+		Dwarf dwalin = new Dwarf("Dwalin","Tolkien", "Dwalin.png");
+		Dwarf fili = new Dwarf("Fili","Tolkien", "Fili.png");
+		Dwarf kili = new Dwarf("Kili","Tolkien", "Kili.png");
+		Dwarf dori = new Dwarf("Dori","Tolkien", "Dori.png");
+		Dwarf nori = new Dwarf("Nori","Tolkien", "Nori.png");
+		Dwarf ori = new Dwarf("Ori","Tolkien", "Ori.png");
+		Dwarf oin = new Dwarf("Oin","Tolkien", "Oin.png");
+		Dwarf gloin = new Dwarf("Gloin","Tolkien", "Gloin.png");
+		Dwarf bifur = new Dwarf("Bifur","Tolkien", "Bifur.png");
+		Dwarf bofur = new Dwarf("Bofur","Tolkien", "Bofur.png");
+		Dwarf bombur = new Dwarf("Bombur","Tolkien", "Bombur.png");
 		
 		dwarfs.add(thorin);
 		dwarfs.add(balin);
