@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <link rel="stylesheet" href="../styles/styles.css" />
-  <link href="https://fonts.googleapis.com/css?family=Creepster|Old+Standard+TT" rel="stylesheet" /> 
+  <link href="http://fonts.googleapis.com/css?family=Creepster|Old+Standard+TT" rel="stylesheet" /> 
   <title>Dwarfs From Movies</title>
 </head>
 
@@ -16,24 +16,83 @@
 <div class="container">
 <nav th:replace="layouts/nav :: navFragment">
 </nav>
-</div> 
 
-<div class="container">
+
+
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4" style="text-align:center;">Disney || Tolkien</h1>
   </div>
 </div>
+
+
+<div class="form-row">
+<section class="col-lg-4">
+<form action="/searchid" method="get">
+<div class="form-group">
+  <label>ID</label>
+  <input type="text" class="form-control" placeholder="Enter the ID for the Dwarf:" name="id"/>
+  <button type="submit" class="btn btn-primary">Search</button>
 </div>
+</form>
+</section>
+<section class="col-lg-4">
+<form action="/searchname" method="post">
+<div class="form-group">
+  <label>Name</label>
+  <input type="text" class="form-control" placeholder="Enter the Name for the Dwarf:" name="name"/>
+  <button type="submit" class="btn btn-primary">Search</button>
+</div>
+</form>
+</section>
+<section class="col-lg-4">
+<form action="/searchauthor" method="get">
+<div class="form-group">
+  <label>Author</label>
+  <input type="text" class="form-control" placeholder="Enter the Author for the Dwarf:" name="author"/>
+  <button type="submit" class="btn btn-primary">Search</button>
+</div>
+</form>
+</section>
+</div>
+<div class="form-row">
+<section class="col-lg-12 col-md-12 sm-col-12">
+<form action="/searchbyauthorandname" method="get">
+<div class="form-group">
+  <label>By Name and Author</label>
+  <input type="text" class="form-control" placeholder="Enter the Name for the Dwarf:" name="name"/>
+   <input type="text" class="form-control" placeholder="Enter the Author for the Dwarf:" name="author"/>
+  <button  type="submit" class="btn btn-primary">Search</button>
+</div>
+</form>
+</section>
+</div>
+<div class="form-row">
+<section class="col-lg-12 col-md-12 sm-col-12">
+<form action="/searchbyauthorandname" method="get">
+<div class="form-group">
+  <label>By Id and Author</label>
+  <input type="text" class="form-control" placeholder="Enter the ID for the Dwarf:" name="id"/>
+   <input type="text" class="form-control" placeholder="Enter the Author for the Dwarf:" name="author"/>
+  <button type="submit" class="btn btn-primary">Search</button>
+</div>
+</form>
+</section>
+</div>
+
 
 <footer>
 <div class="container">
 <div th:replace="layouts/footer :: footerFragment">
 </div>
-</footer>
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</footer>
+
+<script src="http://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 </body>
 </html>

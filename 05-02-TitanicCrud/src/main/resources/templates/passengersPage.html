@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link href="http://fonts.googleapis.com/css?family=Creepster|Old+Standard+TT" rel="stylesheet" /> 
+  <title>Titanic Database</title>
+</head>
+
+<body>
+<div class="container">
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+<table class="table table-striped">
+
+<thead>
+
+<th>Name</th>
+<th>Author</th>
+<th>Image</th>
+
+</thead>
+
+<tbody>
+<tr th:each="pass:${passengers}">
+<td th:text="${pass.passengerId}"></td>
+<td th:text="${pass.survived}"></td>
+<td th:text="${pass.pclass}"></td>
+<td th:text="${pass.name}"></td>
+<td th:text="${pass.sex}"></td>
+<td th:text="${pass.age}"></td>
+<td th:text="${pass.sibSp}"></td>
+<td th:text="${pass.parch}"></td>
+<td th:text="${pass.ticket}"></td>
+<td th:text="${pass.fare}"></td>
+<td th:text="${pass.cabin}"></td>
+<td th:text="${pass.embarked}"></td>
+</tr>
+</tbody>
+
+</tbody>
+</table>
+</div>
+</body>
+
+</html>
