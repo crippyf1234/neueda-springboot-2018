@@ -14,6 +14,57 @@
 <div class="container">
 <nav th:replace="layouts/nav :: navFragment">
 </nav>
+
+<div class="form-row">
+<section class="col-lg-4">
+<form action="/searchid" method="get">
+<div class="form-group">
+  <label>ID</label>
+  <input type="text" class="form-control" placeholder="Enter the ID for the Passenger:" name="id"/>
+  <button type="submit" class="btn btn-primary">Search</button>
+</div>
+</form>
+</section>
+</div>
+
+<table class="table table-striped">
+
+<thead>
+
+<th>Passenger Id</th>
+<th>Survived</th>
+<th>PClass</th>
+<th>Name</th>
+<th>Sex</th>
+<th>Age</th>
+<th>Sib Sp</th>
+<th>Parch</th>
+<th>Ticket</th>
+<th>Fare</th>
+<th>Cabin</th>
+<th>Embarked</th>
+
+</thead>
+
+<tbody>
+<tr th:each="pass:${passengers}">
+<td th:text="${pass.passengerId}"></td>
+<td th:text="${pass.survived==0}? 'Survived' : 'Died'"></td>
+<td th:text="${pass.pclass==1}? 'First Class' : (${pass.pclass==2}? '2nd Class' : '3rd Class')"></td>
+<td th:text="${pass.name}"></td>
+<td th:text="${pass.sex}"></td>
+<td th:text="${pass.age}"></td>
+<td th:text="${pass.sibSp}"></td>
+<td th:text="${pass.parch}"></td>
+<td th:text="${pass.ticket}"></td>
+<td th:text="${pass.fare}"></td>
+<td th:text="${pass.Cabin == ''}? 'No Cabin' : ${pass.Cabin}"></td>
+<td th:text="${pass.embarked == 'C'} ? 'Cherbourg' : (${pass.embarked == 'Q'} ? 'Queenstown' : 'Southhampton')"></td>
+</tr>
+</tbody>
+
+</tbody>
+</table>
 </div>
 </body>
 
