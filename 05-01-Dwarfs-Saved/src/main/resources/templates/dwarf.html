@@ -26,18 +26,27 @@
 </div>
 </div>
 
+
+<div class="alert alert-success" role="alert" th:if="${message}">
+	<p th:text="${message}"></p>
+</div>
+
+
 <div class="container">
-<p th:text="${pageTitle} + ' ' + Dwarfs">Disney Dwarfs</p>
+
+	<p th:text="${pageTitle} + ' ' + Dwarfs">Disney Dwarfs</p>
+	
 <table class="table table-striped">
 
 <thead>
 
 <th>Name</th>
-<th>Author</th>
-<th>Image</th>
+<th>Picture</th>
+<th>CRUD</th>
 
 </thead>
 
+<!--
 <tbody>
 <tr th:each="char: ${dwarfs}">
 <td th:text="${char.name}">Happy</td>
@@ -45,19 +54,24 @@
 <td><img src="../static/images/Happy.png" th:src="@{/images/}+${char.image}"></img></td>
 </tr>
 </tbody>
+-->
 
-
-<tr th:each="char: ${disneyDwarfs}">
+<tr th:each="char: ${dwarfs}">
 <td th:text="${char.name}">Happy</td>
-<td th:text="${char.author}">Disney</td>
 <td><img src="../static/images/Happy.png" th:src="@{/images/}+${char.image}"></img></td>
+<td>
+	<a href="#" th:href="@{/view/} + ${char.dwarfId}">View</a>
+	<a href="#" th:href="@{/delete/} + ${char.dwarfId} + '/' + ${char.author}">Delete</a>
+</td>
 </tr>
 
+<!--  
 <tr th:each="char: ${tolkienDwarfs}">
 <td th:text="${char.name}">Happy</td>
 <td th:text="${char.author}">Disney</td>
 <td><img src="../static/images/Happy.png" th:src="@{/images/}+${char.image}"></img></td>
 </tr>
+-->
 
 </tbody>
 </table>

@@ -10,5 +10,6 @@ public interface DwarfRepository extends CrudRepository<Dwarf, Integer> {
     Iterable<Dwarf> findByName(String name);
 	Object findByNameAndAuthor(String name, String author);
 	Object findByAuthorAndDwarfId(Integer dwarfId, String author);
+	
 
 }

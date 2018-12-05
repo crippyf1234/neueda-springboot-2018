@@ -33,7 +33,7 @@ public class TolkienController {
 	//	DwarfsService tolkienService = new DwarfsService();
 	//	ArrayList<Dwarf> tolkienDwarfs = tolkienService.getTolkienDwarfs();
 		model.addAttribute("pageTitle", "Tolkien");
-		model.addAttribute("tolkienDwarfs", this.dwarfRepository.findByAuthor("Tolkien"));
+		model.addAttribute("dwarfs", this.dwarfRepository.findByAuthor("Tolkien"));
 	
 		return "dwarf.html";
 	}

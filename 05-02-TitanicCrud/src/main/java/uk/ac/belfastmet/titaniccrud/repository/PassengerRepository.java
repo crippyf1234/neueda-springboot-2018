@@ -4,8 +4,10 @@ import org.springframework.data.repository.CrudRepository;
 
 import uk.ac.belfastmet.titaniccrud.domain.Passenger;
 
-public interface PassengerRepository extends CrudRepository<Passenger, Integer> {
+public interface PassengerRepository extends CrudRepository<Passenger, Integer>{
 
-	Object findByPassengerId(Integer passengerId);
+	Iterable<Passenger> findByNameContaining(String name);
+
+	Passenger findByPassengerId(Integer passengerId);
 
 }

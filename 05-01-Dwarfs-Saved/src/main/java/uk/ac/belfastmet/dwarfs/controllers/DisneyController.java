@@ -13,7 +13,6 @@ import uk.ac.belfastmet.dwarfs.repository.DwarfRepository;
 
 @Controller
 @RequestMapping("/disney")
-
 public class DisneyController{
 	
 	DwarfRepository dwarfRepository;
@@ -31,7 +30,7 @@ public class DisneyController{
 	//	DwarfsService dwarfsService = new DwarfsService();
 	//	ArrayList<Dwarfs> disneyDwarfs = dwarfsService.getDisneyDwarfs();
 		model.addAttribute("pageTitle", "Disney");
-		model.addAttribute("disneyDwarfs", this.dwarfRepository.findByAuthor("Disney"));
+		model.addAttribute("dwarfs", this.dwarfRepository.findByAuthor("Disney"));
 	
 		return "dwarf.html";
 	}
