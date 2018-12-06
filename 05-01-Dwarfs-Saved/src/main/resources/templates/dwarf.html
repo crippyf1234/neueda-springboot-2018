@@ -34,7 +34,11 @@
 
 <div class="container">
 
+
+
 	<p th:text="${pageTitle} + ' ' + Dwarfs">Disney Dwarfs</p>
+	
+	<p><a href="#" th:href="@{/add/}"}>Add New Dwarf</a></br></p>
 	
 <table class="table table-striped">
 
@@ -60,8 +64,9 @@
 <td th:text="${char.name}">Happy</td>
 <td><img src="../static/images/Happy.png" th:src="@{/images/}+${char.image}"></img></td>
 <td>
-	<a href="#" th:href="@{/view/} + ${char.dwarfId}">View</a>
-	<a href="#" th:href="@{/delete/} + ${char.dwarfId} + '/' + ${char.author}">Delete</a>
+	<a href="#" th:href="@{/view/} + ${char.dwarfId}">View</a></br>
+	<a href="#" th:href="@{/edit/} + ${char.dwarfId}">Edit</a></br>
+	<a href="#" th:href="@{/delete/} + ${char.dwarfId}">Delete</a>
 </td>
 </tr>
 
@@ -75,6 +80,8 @@
 
 </tbody>
 </table>
+<p><a href="#" th:href="@{/add/}"}>Add New Dwarf</a></br></p>
+
 </div>
 
 <footer>

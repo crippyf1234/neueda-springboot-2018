@@ -109,7 +109,11 @@
 <td th:text="${pass.fare}"></td>
 <td th:text="${pass.Cabin == ''}? 'No Cabin' : ${pass.Cabin}"></td>
 <td th:text="${pass.embarked == 'C'} ? 'Cherbourg' : (${pass.embarked == 'Q'} ? 'Queenstown' : 'Southhampton')"></td>
-<td><a th:href="@{view/} + ${pass.passengerId}">View</a></td>
+<td>
+	<a th:href="@{/view/} + ${pass.passengerId}">View</a></br>
+	<a th:href="@{/edit/} + ${pass.passengerId}">Edit</a></br>
+	<a th:href="@{/delete/} + ${pass.passengerId}">Delete</a>
+</td>
 </tr>
 </tbody>
 

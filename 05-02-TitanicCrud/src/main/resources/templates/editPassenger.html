@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link href="http://fonts.googleapis.com/css?family=Creepster|Old+Standard+TT" rel="stylesheet" /> 
+  <title th:text=${pageTitle}>Dwarfs</title>
+</head>
+
+<body>
+
+<div class="container">
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+</div> 
+
+<div class="container">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" style="text-align:center;" th:text="${pageTitle}"></h1>
+  </div>
+</div>
+</div>
+
+<div class="container">
+<form class="form-horizontal" th:action="@{/save}" method="post">
+<table class="table table-striped">
+
+<thead>
+
+<th>Column</th>
+<th>Value</th>
+
+</thead>
+
+<tbody>
+
+	<tr>
+		<td>Passenger Id</td>
+		<td><input type="text" readonly="readonly" th:field="${passenger.passengerId}"/></td>
+	</tr>
+	
+	<tr>
+		<td>Did they survive?</td>
+		<td><input type="text" class="form-control" th:field="${passenger.survived}"/></td>
+	</tr>
+	
+	<tr>
+		<td>Passengers Class</td>
+		<td><input type="text" class="form-control" th:field="${passenger.pclass}"/></input></td>
+	</tr>
+	
+	<tr>
+		<td>Passenger Name</td>
+		<td><input type="text" class="form-control" th:field="${passenger.name}"/></td>
+	</tr>
+	
+	<tr>
+		<td>Passenger Sex</td>
+		<td><input type="text" class="form-control" th:field="${passenger.sex}"/></input></td>
+	</tr>
+	
+	<tr>
+		<td>Passenger Age</td>
+		<td><input type="text" class="form-control"  th:field="${passenger.age}"/></input></td>
+	</tr>
+	
+	<tr>
+		<td>How many Siblings or Spouses did the Passenger have?</td>
+		<td><input type="text" class="form-control"  th:field="${passenger.sibSp}"/></input></td>
+	</tr>
+	
+	<tr>
+		<td>Passenger Parch</td>
+		<td><input type="text" class="form-control"  th:field="${passenger.parch}"/></input></td>
+	</tr>
+	
+	<tr>
+		<td>Passenger Ticket</td>
+		<td><input type="text" class="form-control"  th:field="${passenger.ticket}"/></input></td>
+	</tr>
+	
+	<tr>
+		<td>Passenger Fare</td>
+		<td><input type="text" class="form-control"  th:field="${passenger.fare}"/></input></td>
+	</tr>
+	
+	<tr>
+		<td>Passenger Cabin Number</td>
+		<td><input type="text" class="form-control"  th:field="${passenger.cabin}"/></input></td>
+	</tr>
+	
+	<tr>
+		<td>Where did they embark?</td>
+		<td><input type="text" class="form-control" th:field="${passenger.embarked}"/></input></td>
+	</tr>
+
+</tbody>
+</table>
+
+<button type="submit" class="btn btn-primary">Save</button>
+
+</form>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

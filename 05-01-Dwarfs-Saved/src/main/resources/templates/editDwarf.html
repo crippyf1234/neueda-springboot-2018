@@ -28,6 +28,7 @@
 
 <div class="container">
 
+<form class="form-horizontal" th:action="@{/save}" method="post">
 <table class="table table-striped">
 
 <thead>
@@ -37,30 +38,35 @@
 
 </thead>
 
-<tbody>
-
 	<tr>
 		<td>Dwarf Id</td>
-		<td th:text="${dwarf.dwarfId}"></td>
+		<td><input type="text" readonly="readonly" th:field="${dwarf.dwarfId}"></td>
 	</tr>
 	
 	<tr>
 		<td>Name</td>
-		<td th:text="${dwarf.name}"></td>
+		<td><input type="text" class="form-control" th:field="${dwarf.name}">
+		<span th:if="${#fields.hasErrors('dwarf.name')}" th:error="${dwarf.name}" th:class="fieldError">Name cannot be empty</span>
+		</input></td>
 	</tr>
 	
 	<tr>
 		<td>Author</td>
-		<td th:text="${dwarf.author}"/></td>
+		<td><input type="text" class="form-control" th:field="${dwarf.author}"></input></td>
 	</tr>
 	
 	<tr>
 		<td>Image</td>
-		<td th:text="${dwarf.image}"></td>
+		<td><input type="text" class="form-control" th:field="${dwarf.image}"></input></td>
 	</tr>
 
 </tbody>
 </table>
+
+<button type="submit" class="btn btn-primary">Save</button>
+
+</form>
+
 </div>
 
 <footer>
