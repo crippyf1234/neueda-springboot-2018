@@ -19,7 +19,7 @@
 <nav th:replace="layouts/nav :: navFragment"></nav>
 
 <div class="form-row">
-	<section class="col-lg-4">
+	<section class="col-lg-4 col-md-4 col-sm-12">
 		<form action="/searchid" method="get">
 			<div class="form-group">
 			  <label>ID</label>
@@ -31,7 +31,7 @@
 </div>
 
 <div class="form-row">
-	<section class="col-lg-4">
+	<section class="col-lg-4 col-md-4 col-sm-12">
 		<form action="/searchname" method="get">
 			<div class="form-group">
 			  <label>Name</label>
@@ -55,7 +55,7 @@
 		<button type="submit" value="Submit" class="btn btn-primary">Submit</button>
 	</div>
 </form>
-
+<div class="table-responsive">
 <table class="table table-striped">
 
 	<thead>
@@ -77,7 +77,7 @@
 	<tbody>
 		<tr th:each="pass:${passengers}">
 			<td th:text="${pass.passengerId}"></td>
-			<td th:text="${pass.survived==0}? 'Survived' : 'Died'"></td>
+			<td th:text="${pass.survived==1}? 'Survived' : 'Died'"></td>
 			<td th:text="${pass.pclass==1}? 'First Class' : (${pass.pclass==2}? '2nd Class' : '3rd Class')"></td>
 			<td th:text="${pass.name}"></td>
 			<td th:text="${pass.sex}"></td>
@@ -97,7 +97,7 @@
 	</tbody>
 
 </table>
-
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
