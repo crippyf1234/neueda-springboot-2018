@@ -45,12 +45,30 @@ public class SearchController {
 	    model.addAttribute("passenger", this.passengerRepository.findByPassengerId(passengerId));
 		return "viewPassenger";
 	}
+
+	@GetMapping("/didtheysurvivesearch")
+	public String didTheySurviveSearch(@RequestParam("category") String category, Model model) {
+		
+		switch (category) {
+		
+			case "nofilter": 
+				model.addAttribute("passengers", passengerRepository.findAll());
+				break;
+			
+			case "survived": 
+				model.addAttribute("passengers", passengerRepository.findBySurvivedOrderByNameAsc(0));
+				break;
+				
+			case "died": 
+				model.addAttribute("passengers", passengerRepository.findBySurvivedOrderByNameAsc(1));
+				break;
 	
-/** @GetMapping("/delete/{passengerId}")
-	public String deletePassenger(@PathVariable("passengegrId") Integer passengerId, Model model) {
-		model.addAttribute("pageTitle","View");
-		redirectAttributes.addFlashAttribute("message","Dwarf Deleted Successfully");
-		return "redirect:/Passenger.html";
+			default:
+				model.addAttribute("passengers", passengerRepository.findAll());
+				break;
+		}
+
+		return "homePage.html";
 	}
-**/
+	
 }

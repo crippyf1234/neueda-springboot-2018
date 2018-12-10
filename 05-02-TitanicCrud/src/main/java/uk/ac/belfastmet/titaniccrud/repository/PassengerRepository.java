@@ -10,4 +10,10 @@ public interface PassengerRepository extends CrudRepository<Passenger, Integer>{
 
 	Passenger findByPassengerId(Integer passengerId);
 
+	Iterable<Passenger> findByNameContainsOrderByNameAsc(String val);
+
+	Iterable<Passenger> findBySurvived(int i);
+
+	Iterable<Passenger> findBySurvivedOrderByNameAsc(int i);
+
 }
