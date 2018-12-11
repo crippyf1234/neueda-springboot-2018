@@ -19,10 +19,9 @@ public class Passenger {
 		super();
 	}
 
-	public Passenger(Integer passengerId, Integer survived, Integer pclass, String name, String sex, Integer age,
+	public Passenger(Integer survived, Integer pclass, String name, String sex, Integer age,
 			Integer sibSp, Integer parch, String ticket, Double fare, String cabin, String embarked) {
 		super();
-		this.passengerId = passengerId;
 		this.survived = survived;
 		this.pclass = pclass;
 		this.name = name;
@@ -39,7 +38,7 @@ public class Passenger {
 	public Integer getPassengerId() {
 		return passengerId;
 	}
-
+	
 	public void setPassengerId(Integer passengerId) {
 		this.passengerId = passengerId;
 	}
