@@ -5,14 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+<<<<<<< HEAD
   <link rel="stylesheet" href="../styles/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Creepster|Old+Standard+TT" rel="stylesheet"/>
+=======
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Creepster|Old+Standard+TT" rel="stylesheet"/>
+ 
+>>>>>>> 08f57ef52411e8b88c6a4181ac43700c6bed7166
   <title>Weather Database</title>
 </head>
 
 <body>
+<<<<<<< HEAD
 <div class="container">
 	<nav th:replace="layouts/nav :: navFragment"></nav>
+=======
+	<div class="container">
+		<nav th:replace="layouts/nav :: navFragment">
+		</nav>
+>>>>>>> 08f57ef52411e8b88c6a4181ac43700c6bed7166
 		
 <form id="search-form" action="/weather/locationsearch" method="get">
 	<div>For Which Region Would You Like To Know About The Weather?</div>
@@ -30,39 +42,83 @@
 </form>
  
 <!-- Modal Opener Button -->
+<<<<<<< HEAD
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+=======
+<button type="button" class="btn btn-primary" data-toggle="modal" th:attr="data-target='#' + ${pageTitle}">
+>>>>>>> 08f57ef52411e8b88c6a4181ac43700c6bed7166
   <p th:text="${pageTitle} + ' Weather'"></p>
   <img th:src="@{/images/} + ${image}"/>
 </button>
 
+<<<<<<< HEAD
 </div>
 	
 	<!-- Modals -->
 	
 <div class="modal" id="myModal">
+=======
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>City</th>
+					<th>Weather</th>
+					<th>Temperature</th>
+					<th>Pictogram</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td th:text="${todaysWeather.location.name}"></td>
+					<td th:text="${todaysWeather.weather.description}"></td>
+					<td th:text="${todaysWeather.weather.temperature}"></td>
+					<td><img th:src="${todaysWeather.weather.image}"/></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<!-- Modals -->
+	
+	<div class="modal" th:attr="id=${pageTitle}">
+>>>>>>> 08f57ef52411e8b88c6a4181ac43700c6bed7166
   <div class="modal-dialog">
     <div class="modal-content">
 
       <!-- Modal Header -->
       <div class="modal-header">
         <h4 class="modal-title" th:text="${pageTitle}"></h4>
+<<<<<<< HEAD
+=======
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+>>>>>>> 08f57ef52411e8b88c6a4181ac43700c6bed7166
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
        	<ul>
+<<<<<<< HEAD
        		<h5>Weather Description:</h5>
        		<li th:text="${todaysWeather.weather.description}"></li>
        		<h5>Temperature:</h5>
        		<li th:utext="${todaysWeather.weather.temperature} + '&#8451'"></li>
        		<h5>Pictogram:</h5>	
+=======
+       		<li th:text="${todaysWeather.location.name}"></li>
+       		<li th:text="${todaysWeather.weather.description}"></li>
+       		<li th:text="${todaysWeather.weather.temperature}"></li>	
+>>>>>>> 08f57ef52411e8b88c6a4181ac43700c6bed7166
        		<li><img th:src="${todaysWeather.weather.image}"/></li>
        	</ul>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
+<<<<<<< HEAD
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+=======
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+>>>>>>> 08f57ef52411e8b88c6a4181ac43700c6bed7166
       </div>
 
     </div>
@@ -70,9 +126,25 @@
 </div>
 	
 	<!-- Scripts -->
+<<<<<<< HEAD
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+=======
+	
+	<script>
+		var current = new Date()
+		var time = current.getHours()
+		if (time<=12 && time>=6)
+		    document.write("<img src='images/morning.jpg'>")
+		else if (time>=12 && time<=17)
+			document.write("<img src='images/afternoon.jpg'>")
+		else if (time>=17 && time<=22)
+			document.write("<img src='images/evening.jpg'>")
+		else
+		    document.write("<img src='images/night.jpg'>")
+	</script>
+>>>>>>> 08f57ef52411e8b88c6a4181ac43700c6bed7166
 </body>
 </html>
