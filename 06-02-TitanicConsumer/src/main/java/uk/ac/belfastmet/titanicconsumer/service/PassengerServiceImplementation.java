@@ -2,7 +2,6 @@ package uk.ac.belfastmet.titanicconsumer.service;
 
 import java.util.ArrayList;
 
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

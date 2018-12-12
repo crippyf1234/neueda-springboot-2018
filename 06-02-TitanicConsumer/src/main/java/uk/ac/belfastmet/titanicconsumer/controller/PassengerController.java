@@ -110,7 +110,7 @@ public class PassengerController {
 	}
 
 	@PostMapping("/save")
-	public String savePassenger(@Valid Passenger passenger, @RequestParam("addUpdate") String addUpdate, Model model) {
+	public String savePassenger(Passenger passenger, @RequestParam("addUpdate") String addUpdate, Model model) {
 
 		model.addAttribute("pageTitle", "Edit Passenger!");
 		
@@ -123,8 +123,6 @@ public class PassengerController {
 			this.passengerService.update(passenger);
 			return "redirect:/view/" + passenger.getPassengerId();
 		}
-			
-			
 			
 	}
 	
