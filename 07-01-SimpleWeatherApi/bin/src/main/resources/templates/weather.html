@@ -1,0 +1,106 @@
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Creepster|Old+Standard+TT" rel="stylesheet"/>
+ 
+  <title>Weather Database</title>
+</head>
+
+<body>
+	<div class="container">
+		<nav th:replace="layouts/nav :: navFragment">
+		</nav>
+		
+<form id="search-form" action="/weather/locationsearch" method="get">
+	<div>For Which Region Would You Like To Know About The Weather?</div>
+	<div class="form-group">
+		<select name="category" class="browser-default custom-select">
+			<option selected>Search by Location</option>
+			<option value="London">London</option>
+			<option value="Belfast">Belfast</option>
+			<option value="Dublin">Dublin</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+	</div>
+</form>
+ 
+<!-- Modal Opener Button -->
+<button type="button" class="btn btn-primary" data-toggle="modal" th:attr="data-target='#' + ${pageTitle}">
+  <p th:text="${pageTitle} + ' Weather'"></p>
+  <img th:src="@{/images/} + ${image}"/>
+</button>
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>City</th>
+					<th>Weather</th>
+					<th>Temperature</th>
+					<th>Pictogram</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td th:text="${todaysWeather.location.name}"></td>
+					<td th:text="${todaysWeather.weather.description}"></td>
+					<td th:text="${todaysWeather.weather.temperature}"></td>
+					<td><img th:src="${todaysWeather.weather.image}"/></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<!-- Modals -->
+	
+	<div class="modal" th:attr="id=${pageTitle}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title" th:text="${pageTitle}"></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+       	<ul>
+       		<li th:text="${todaysWeather.location.name}"></li>
+       		<li th:text="${todaysWeather.weather.description}"></li>
+       		<li th:text="${todaysWeather.weather.temperature}"></li>	
+       		<li><img th:src="${todaysWeather.weather.image}"/></li>
+       	</ul>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+	
+	<!-- Scripts -->
+	
+	<script>
+		var current = new Date()
+		var time = current.getHours()
+		if (time<=12 && time>=6)
+		    document.write("<img src='images/morning.jpg'>")
+		else if (time>=12 && time<=17)
+			document.write("<img src='images/afternoon.jpg'>")
+		else if (time>=17 && time<=22)
+			document.write("<img src='images/evening.jpg'>")
+		else
+		    document.write("<img src='images/night.jpg'>")
+	</script>
+</body>
+</html>
