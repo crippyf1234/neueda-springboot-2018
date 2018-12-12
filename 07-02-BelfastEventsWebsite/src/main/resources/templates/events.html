@@ -1,0 +1,82 @@
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Creepster|Old+Standard+TT" rel="stylesheet"/>
+ 
+  <title>Weather Database</title>
+</head>
+
+<body>
+	<div class="container">
+		<nav th:replace="layouts/nav :: navFragment">
+		</nav>
+
+		<table class="table table-striped" th:each="events : ${allEvents}">
+			<thead>
+				<tr>
+					<th>Identifier</th>
+					<th>Title</th>
+					<th>Start Date</th>
+					<th>End Date</th>
+					<th>Time</th>
+					<th>Venue</th>
+					<th>Image</th>
+					<th>Audience</th>
+					<th>Theme</th>
+					<th>Cost</th>
+					<th>Content</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td th:text="${events.identifier}"></td>
+	                <td><a th:href="${events.url}" th:text="${events.title}"></a></td>
+			        <td th:text="${#dates.format(events.startDate)}"></td>
+					<td th:text="${#dates.format(events.endDate)}"></td> 
+					<td th:text="${events.time}"></td>
+					<td><a th:href="${events.venueUrl}" th:text="${events.venue}"></a></td>
+					<td><img th:src="${events.image}"/></td>
+					<td th:text="${events.audience}"></td>
+					<td th:text="${events.theme}"></td>
+					<td th:text="${events.cost}"></td>
+			        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+ 										 Details
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- Modals -->
+	<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <td th:utext="${events.content}"></td>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+	
+</body>
+</html>
