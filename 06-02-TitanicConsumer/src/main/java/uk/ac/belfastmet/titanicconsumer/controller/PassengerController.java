@@ -58,6 +58,17 @@ public class PassengerController {
 		return "viewPassenger";
 	}
 	
+	@GetMapping("/index")
+	public String homePage( Model model){
+		
+		model.addAttribute("pageTitle", "HomePage");
+		
+		ArrayList<Passenger> passenger = this.passengerService.list();
+		model.addAttribute("passengers", passenger);
+		
+		return "index";
+	}
+	
 	@GetMapping("/passenger")
 	public String viewPassengers( Model model){
 		
@@ -69,12 +80,24 @@ public class PassengerController {
 		return "passenger";
 	}
 	
+	@GetMapping("/view/{passengerId}")
+	public String viewPassenger1(@PathVariable("passengerId") Integer passengerId, Model model) {
+		
+		model.addAttribute("pageTitle", "View Passenger");
+		
+		Passenger passenger = this.passengerService.get(passengerId);
+		model.addAttribute("passenger", passenger);
+
+		
+		return "viewPassenger";
+}
+	
 	@GetMapping("/add/")
 	public String addPassenger(Model model) {
 		model.addAttribute("pageTitle", "Titanic Add");
 		Passenger passenger = new Passenger();
 		model.addAttribute("passenger", passenger);
-		return "edit.html";
+		return "editPassenger";
 	}
 	
 	@GetMapping("/edit/{passengerId}")
@@ -83,7 +106,7 @@ public class PassengerController {
 		
 		model.addAttribute("pageTitle", "Edit Passenger");
 		model.addAttribute("passenger", this.passengerService.update(passenger));
-		return "edit.html";
+		return "editPassenger";
 	}
 
 	@PostMapping("/save")
@@ -94,7 +117,7 @@ public class PassengerController {
 						
 		if(addUpdate.equals("Titanic Add")) {
 			this.passengerService.add(passenger);
-			return "redirect:/passengers";
+			return "redirect:/passenger";
 		}
 		else {
 			this.passengerService.update(passenger);
@@ -110,7 +133,7 @@ public class PassengerController {
 	public String deletePassenger(@PathVariable("passengerId") Integer passengerId, Model model, RedirectAttributes redirectAttributes) {
 		redirectAttributes.addFlashAttribute("message", "Successfully deleted passenger!");
 		this.passengerService.delete(passengerId);
-		return "redirect:/passengers";
+		return "redirect:/passenger";
 	
 	}
 }
