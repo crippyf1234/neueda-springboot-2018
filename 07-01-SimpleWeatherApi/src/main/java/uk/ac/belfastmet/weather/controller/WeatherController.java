@@ -15,14 +15,14 @@ import uk.ac.belfastmet.weather.domain.TodaysWeather;
 @Controller
 @RequestMapping()
 public class WeatherController {
-<<<<<<< HEAD
-=======
+
+
 
 	@GetMapping
 	public String home() {
 		return "home";
 	}
->>>>>>> 08f57ef52411e8b88c6a4181ac43700c6bed7166
+
 	
 	@GetMapping("/weather/{location}")
 	public String belfast(@PathVariable("location") String location, Model model) {
@@ -33,11 +33,10 @@ public class WeatherController {
 		
 		Logger logger = LoggerFactory.getLogger(TodaysWeather.class);
 		logger.info(todaysWeather.toString());
-<<<<<<< HEAD
+
 		model.addAttribute("pageTitle", location);
-=======
 		
->>>>>>> 08f57ef52411e8b88c6a4181ac43700c6bed7166
+
 		model.addAttribute("todaysWeather", todaysWeather);
 		return "weather";
 		

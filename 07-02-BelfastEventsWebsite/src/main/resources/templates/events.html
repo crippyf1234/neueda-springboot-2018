@@ -5,28 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-  <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="../styles/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Creepster|Old+Standard+TT" rel="stylesheet"/>
- 
+
   <title>Weather Database</title>
 </head>
 
 <body>
 	<div class="container">
+		<div>
+			<img src="images/CityHallColours.jpg"/>
+		</div>
 		<nav th:replace="layouts/nav :: navFragment">
 		</nav>
 
 		<table class="table table-striped" th:each="events : ${allEvents}">
 			<thead>
 				<tr>
-					<th>Identifier</th>
 					<th>Title</th>
 					<th>Start Date</th>
 					<th>End Date</th>
 					<th>Time</th>
 					<th>Venue</th>
-					<th>Image</th>
-					<th>Audience</th>
 					<th>Theme</th>
 					<th>Cost</th>
 					<th>Content</th>
@@ -35,18 +35,17 @@
 
 			<tbody>
 				<tr>
-					<td th:text="${events.identifier}"></td>
-	                <td><a th:href="${events.url}" th:text="${events.title}"></a></td>
+	                <td><a th:href="${events.url}" th:utext="${events.title}"></a></td>
 			        <td th:text="${#dates.format(events.startDate)}"></td>
 					<td th:text="${#dates.format(events.endDate)}"></td> 
 					<td th:text="${events.time}"></td>
 					<td><a th:href="${events.venueUrl}" th:text="${events.venue}"></a></td>
-					<td><img th:src="${events.image}"/></td>
 					<td th:text="${events.audience}"></td>
 					<td th:text="${events.theme}"></td>
 					<td th:text="${events.cost}"></td>
-			        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
- 										 Details
+			        <td>
+			        	<button type="button" class="btn btn-primary" data-toggle="modal" th:attr="data-target= '#' + ${events.identifier}">
+ 										 Event Details 
 						</button>
 					</td>
 				</tr>
@@ -54,29 +53,34 @@
 		</table>
 	</div>
 	<!-- Modals -->
-	<div class="modal" id="myModal">
+<div class="modal" th:each="events : ${allEvents}" th:attr="id=${events.identifier}">
   <div class="modal-dialog">
     <div class="modal-content">
 
       <!-- Modal Header -->
       <div class="modal-header">
         <h4 class="modal-title">Modal Heading</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
+        <h2>Audience</h2>
+        <td th:text="${events.audience}"></td>
+        <h2>Description</h2>
         <td th:utext="${events.content}"></td>
+        <img th:src="${events.image}"/>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
 
     </div>
   </div>
 </div>
-	
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
