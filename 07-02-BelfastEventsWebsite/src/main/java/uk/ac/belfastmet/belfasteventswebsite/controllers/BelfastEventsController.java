@@ -1,4 +1,4 @@
-package uk.ac.belfastmet.belfasteventswebsite.controllers;
+package uk.ac.belfastmet.belfasteventswesbsite.controllers;
 
 
 import org.springframework.stereotype.Controller;

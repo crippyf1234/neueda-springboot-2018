@@ -18,9 +18,9 @@
 <body>
 
 <div class="container">
+
 	<nav th:replace="layouts/nav :: navFragment"></nav>
 
-		
 <form id="search-form" action="/weather/locationsearch" method="get">
 	<div>For Which Region Would You Like To Know About The Weather?</div>
 	<div class="form-group">
@@ -69,11 +69,7 @@
        		<li th:text="${todaysWeather.weather.description}"></li>
        		<h5>Temperature:</h5>
        		<li th:utext="${todaysWeather.weather.temperature} + '&#8451'"></li>
-       		<h5>Pictogram:</h5>	
-
-       		<li th:text="${todaysWeather.location.name}"></li>
-       		<li th:text="${todaysWeather.weather.description}"></li>
-       		<li th:text="${todaysWeather.weather.temperature}"></li>	
+       		<h5>Pictogram:</h5>
 
        		<li><img th:src="${todaysWeather.weather.image}"/></li>
        	</ul>
