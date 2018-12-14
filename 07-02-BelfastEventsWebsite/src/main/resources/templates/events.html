@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
   <link rel="stylesheet" href="../styles/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Creepster|Old+Standard+TT" rel="stylesheet"/>
-  <title>Weather Database</title>
+  <title>Events Database</title>
 </head>
 
 <body>
@@ -23,7 +23,6 @@
 				<tr>
 					<th>Title</th>
 					<th>Start Date</th>
-					<th>End Date</th>
 					<th>Time</th>
 					<th>Venue</th>
 					<th>Theme</th>
@@ -36,7 +35,6 @@
 				<tr>
 	                <td><a th:href="${events.url}" th:utext="${events.title}"></a></td>
 			        <td th:text="${#dates.format(events.startDate)}"></td>
-					<td th:text="${#dates.format(events.endDate)}"></td> 
 					<td th:text="${events.time}"></td>
 					<td><a th:href="${events.venueUrl}" th:text="${events.venue}"></a></td>
 					<td th:text="${events.theme}"></td>

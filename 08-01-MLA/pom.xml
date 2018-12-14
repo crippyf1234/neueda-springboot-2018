@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>uk.ac.belfastmet</groupId>
-	<artifactId>MLA API</artifactId>
+	<artifactId>08-01-MLA</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>08-01-MLA</name>
 	<description>MLA&#39;s Website</description>

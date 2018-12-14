@@ -16,14 +16,11 @@ import uk.ac.belfastmet.weather.domain.TodaysWeather;
 @RequestMapping()
 public class WeatherController {
 
-
-
 	@GetMapping
 	public String home() {
 		return "home";
 	}
 
-	
 	@GetMapping("/weather/{location}")
 	public String belfast(@PathVariable("location") String location, Model model) {
 		
